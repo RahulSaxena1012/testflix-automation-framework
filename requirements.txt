@@ -1,0 +1,7 @@
+robotframework
+selenium
+pytest
+requests
+allure-pytest
+locust
+pytest-html
