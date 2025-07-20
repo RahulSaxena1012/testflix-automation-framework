@@ -1,7 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Resource    ../../keywords/ui_keywords.robot
-Variables    variables.py
+Variables    ../../variables.py
 
 *** Variables ***
 ${URL}    https://automationexercise.com
