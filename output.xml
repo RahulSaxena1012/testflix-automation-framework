@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.2 on win32)" generated="2025-07-20T19:17:38.618463" rpa="false" schemaversion="5">
+<suite id="s1" name="Ui" source="C:\Users\rahul\testflix-automation-framework\tests\ui">
+<suite id="s1-s1" name="Test Login" source="C:\Users\rahul\testflix-automation-framework\tests\ui\test_login.robot">
+<test id="s1-s1-t1" name="Valid Login Test" line="10">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-20T19:17:38.806008" level="INFO">Opening browser 'chrome' to base url 'https://the-internet.herokuapp.com/login'.</msg>
+<arg>${LOGIN URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-20T19:17:38.805840" elapsed="3.333103"/>
+</kw>
+<kw name="Handle Cookie Consent" owner="ui_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-07-20T19:17:52.377093" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-07-20T19:17:52.377244" level="FAIL">Element 'xpath=//*[contains(@class, "fc-button-label") and contains(text(), "Consent")]' not visible after 10 seconds.</msg>
+<arg>xpath=//*[contains(@class, "fc-button-label") and contains(text(), "Consent")]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-07-20T19:17:42.140045" elapsed="10.238376">Element 'xpath=//*[contains(@class, "fc-button-label") and contains(text(), "Consent")]' not visible after 10 seconds.</status>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=//*[contains(@class, "fc-button-label") and contains(text(), "Consent")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-07-20T19:17:52.379060" elapsed="0.000055"/>
+</kw>
+<status status="FAIL" start="2025-07-20T19:17:42.139803" elapsed="10.239476">Element 'xpath=//*[contains(@class, "fc-button-label") and contains(text(), "Consent")]' not visible after 10 seconds.</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=username</arg>
+<arg>tomsmit</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-07-20T19:17:52.379499" elapsed="0.000050"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>SuperSecretPassword!</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-07-20T19:17:52.379764" elapsed="0.000045"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>class=radius</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-07-20T19:17:52.379998" elapsed="0.000036"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>id=flash</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2025-07-20T19:17:52.380196" elapsed="0.000032"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2025-07-20T19:17:52.380376" elapsed="0.000031"/>
+</kw>
+<status status="FAIL" start="2025-07-20T19:17:38.805209" elapsed="13.575369">Element 'xpath=//*[contains(@class, "fc-button-label") and contains(text(), "Consent")]' not visible after 10 seconds.</status>
+</test>
+<status status="FAIL" start="2025-07-20T19:17:38.660965" elapsed="13.721114"/>
+</suite>
+<suite id="s1-s2" name="Test Search" source="C:\Users\rahul\testflix-automation-framework\tests\ui\test_search.robot">
+<test id="s1-s2-t1" name="Test Product Search" line="9">
+<kw name="Open Website" owner="ui_keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-20T19:17:52.386315" level="INFO">Opening browser 'chrome' to base url 'https://automationexercise.com'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-20T19:17:52.386149" elapsed="2.867554"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-20T19:17:55.254682" elapsed="0.022250"/>
+</kw>
+<status status="PASS" start="2025-07-20T19:17:52.385988" elapsed="2.891160"/>
+</kw>
+<kw name="Handle Cookie Consent" owner="ui_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[contains(@class, "fc-button-label") and contains(text(), "Consent")]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-20T19:17:55.277627" elapsed="0.013978"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-20T19:17:55.292240" level="INFO">Clicking element 'xpath=//*[contains(@class, "fc-button-label") and contains(text(), "Consent")]'.</msg>
+<arg>xpath=//*[contains(@class, "fc-button-label") and contains(text(), "Consent")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-20T19:17:55.291980" elapsed="0.060063"/>
+</kw>
+<status status="PASS" start="2025-07-20T19:17:55.277431" elapsed="0.075256"/>
+</kw>
+<kw name="Search For Product" owner="ui_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-20T19:17:55.353438" level="INFO">Clicking element 'xpath://a[@href="/products"]'.</msg>
+<arg>xpath:${PRODUCT_LINK_PAGE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-20T19:17:55.353275" elapsed="6.493033"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-20T19:18:01.847737" level="INFO">Typing text 'Tshirt' into text field 'xpath://*[@id='search_product']'.</msg>
+<arg>xpath:${SEARCH_INPUT}</arg>
+<arg>${product}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-20T19:18:01.847487" elapsed="0.045458"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-07-20T19:18:01.893886" level="INFO">Clicking button 'xpath://*[@id='submit_search']'.</msg>
+<arg>xpath:${SEARCH_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-20T19:18:01.893696" elapsed="2.520028"/>
+</kw>
+<arg>Tshirt</arg>
+<status status="PASS" start="2025-07-20T19:17:55.353027" elapsed="9.061419"/>
+</kw>
+<kw name="Verify Product Results Visible" owner="ui_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath:${RESULT_DIV}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-20T19:18:04.414945" elapsed="0.010380"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-20T19:18:04.431346" level="INFO">Element 'xpath://div[@class='features_items']' is displayed.</msg>
+<arg>xpath:${RESULT_DIV}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-20T19:18:04.425545" elapsed="0.005851"/>
+</kw>
+<status status="PASS" start="2025-07-20T19:18:04.414734" elapsed="0.017282"/>
+</kw>
+<status status="PASS" start="2025-07-20T19:17:52.385706" elapsed="12.046528"/>
+</test>
+<status status="PASS" start="2025-07-20T19:17:52.383542" elapsed="12.049912"/>
+</suite>
+<suite id="s1-s3" name="Test Signup" source="C:\Users\rahul\testflix-automation-framework\tests\ui\test_signup.robot">
+<test id="s1-s3-t1" name="Test Signup Flow" line="9">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-07-20T19:18:04.438128" level="INFO">${random} = qCoLl</msg>
+<var>${random}</var>
+<arg>5</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-07-20T19:18:04.437963" elapsed="0.000184"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-07-20T19:18:04.438946" level="INFO">${email} = test_user_qCoLl@mail.com</msg>
+<var>${email}</var>
+<arg>test_user_${random}@mail.com</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-07-20T19:18:04.438798" elapsed="0.000170"/>
+</kw>
+<kw name="Open Website" owner="ui_keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-20T19:18:04.439998" level="INFO">Opening browser 'chrome' to base url 'https://automationexercise.com'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-20T19:18:04.439875" elapsed="2.726413"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-20T19:18:07.167524" elapsed="0.024358"/>
+</kw>
+<status status="PASS" start="2025-07-20T19:18:04.439637" elapsed="2.752405"/>
+</kw>
+<kw name="Handle Cookie Consent" owner="ui_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[contains(@class, "fc-button-label") and contains(text(), "Consent")]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-20T19:18:07.192516" elapsed="0.012894"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-20T19:18:07.205873" level="INFO">Clicking element 'xpath=//*[contains(@class, "fc-button-label") and contains(text(), "Consent")]'.</msg>
+<arg>xpath=//*[contains(@class, "fc-button-label") and contains(text(), "Consent")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-20T19:18:07.205662" elapsed="0.070278"/>
+</kw>
+<status status="PASS" start="2025-07-20T19:18:07.192309" elapsed="0.084656"/>
+</kw>
+<kw name="Click Signup/Login" owner="ui_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-20T19:18:07.278167" level="INFO">Clicking element 'xpath://a[contains(text(), ' Signup / Login')]'.</msg>
+<arg>xpath://a[contains(text(), ' Signup / Login')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-20T19:18:07.277633" elapsed="0.928135"/>
+</kw>
+<status status="PASS" start="2025-07-20T19:18:07.277334" elapsed="0.929235"/>
+</kw>
+<kw name="Enter Signup Credentials" owner="ui_keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-20T19:18:08.207315" level="INFO">Typing text 'test_user' into text field 'xpath://*[@data-qa='signup-name']'.</msg>
+<arg>xpath:${SIGNUP_NAME}</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-20T19:18:08.207140" elapsed="0.053195"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-20T19:18:08.261441" level="INFO">Typing text 'test_user_qCoLl@gmail.com' into text field 'xpath://*[@data-qa='signup-email']'.</msg>
+<arg>xpath:${SIGNUP_EMAIL}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-20T19:18:08.261211" elapsed="0.071897"/>
+</kw>
+<arg>test_user</arg>
+<arg>test_user_${random}@gmail.com</arg>
+<status status="PASS" start="2025-07-20T19:18:08.206879" elapsed="0.127102"/>
+</kw>
+<kw name="Submit Signup" owner="ui_keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-07-20T19:18:08.334706" level="INFO">Clicking button 'xpath://*[@data-qa='signup-button']'.</msg>
+<arg>xpath:${SIGNUP_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-20T19:18:08.334542" elapsed="3.115411"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-20T19:18:11.450870" elapsed="2.098411"/>
+</kw>
+<status status="PASS" start="2025-07-20T19:18:08.334300" elapsed="5.215200"/>
+</kw>
+<tag>signup</tag>
+<status status="PASS" start="2025-07-20T19:18:04.437657" elapsed="9.112064"/>
+</test>
+<status status="PASS" start="2025-07-20T19:18:04.435054" elapsed="9.116086"/>
+</suite>
+<status status="FAIL" start="2025-07-20T19:17:38.653727" elapsed="34.898741"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">signup</stat>
+</tag>
+<suite>
+<stat name="Ui" id="s1" pass="2" fail="1" skip="0">Ui</stat>
+<stat name="Test Login" id="s1-s1" pass="0" fail="1" skip="0">Ui.Test Login</stat>
+<stat name="Test Search" id="s1-s2" pass="1" fail="0" skip="0">Ui.Test Search</stat>
+<stat name="Test Signup" id="s1-s3" pass="1" fail="0" skip="0">Ui.Test Signup</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
