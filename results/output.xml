@@ -1,77 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.2 on win32)" generated="2025-07-20T22:34:31.363169" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.13.2 on win32)" generated="2025-07-20T23:05:56.315116" rpa="false" schemaversion="5">
 <suite id="s1" name="Test Search" source="C:\Users\rahul\testflix-automation-framework\tests\ui\test_search.robot">
 <test id="s1-t1" name="Test Product Search" line="10">
 <kw name="Open Website" owner="ui_keywords">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-07-20T22:34:31.582528" level="INFO">${timestamp} = 20250720_223431_582427</msg>
+<msg time="2025-07-20T23:05:56.497434" level="INFO">${timestamp} = 20250720_230556_497365</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y%m%d_%H%M%S_%f</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-07-20T22:34:31.582252" elapsed="0.000318"/>
+<status status="PASS" start="2025-07-20T23:05:56.497232" elapsed="0.000233"/>
 </kw>
 <kw name="Get Environment Variable" owner="OperatingSystem">
-<msg time="2025-07-20T22:34:31.583452" level="INFO">${is_ci} = </msg>
+<msg time="2025-07-20T23:05:56.498514" level="INFO">${is_ci} = </msg>
 <var>${is_ci}</var>
 <arg>CI</arg>
 <arg>${EMPTY}</arg>
 <doc>Returns the value of an environment variable with the given name.</doc>
-<status status="PASS" start="2025-07-20T22:34:31.583148" elapsed="0.000325"/>
+<status status="PASS" start="2025-07-20T23:05:56.498168" elapsed="0.000367"/>
 </kw>
 <kw name="Get Variable Value" owner="BuiltIn">
-<msg time="2025-07-20T22:34:31.584675" level="INFO">${headless_var} = </msg>
+<msg time="2025-07-20T23:05:56.499839" level="INFO">${headless_var} = </msg>
 <var>${headless_var}</var>
 <arg>${HEADLESS}</arg>
 <arg>${EMPTY}</arg>
 <doc>Returns variable value or ``default`` if the variable does not exist.</doc>
-<status status="PASS" start="2025-07-20T22:34:31.583971" elapsed="0.000722"/>
+<status status="PASS" start="2025-07-20T23:05:56.499136" elapsed="0.000722"/>
 </kw>
 <kw name="Set Variable If" owner="BuiltIn">
-<msg time="2025-07-20T22:34:31.585290" level="INFO">${use_headless} = False</msg>
+<msg time="2025-07-20T23:05:56.500422" level="INFO">${use_headless} = False</msg>
 <var>${use_headless}</var>
 <arg>'${is_ci}' != '' or '${headless_var}' == 'true'</arg>
 <arg>${TRUE}</arg>
 <arg>${FALSE}</arg>
 <doc>Sets variable based on the given condition.</doc>
-<status status="PASS" start="2025-07-20T22:34:31.585080" elapsed="0.000233"/>
+<status status="PASS" start="2025-07-20T23:05:56.500247" elapsed="0.000193"/>
 </kw>
 <kw name="Set Variable If" owner="BuiltIn">
-<msg time="2025-07-20T22:34:31.586048" level="INFO">${user_data_dir} = C:/temp/chrome_profile_20250720_223431_582427</msg>
+<msg time="2025-07-20T23:05:56.501095" level="INFO">${user_data_dir} = C:/temp/chrome_profile_20250720_230556_497365</msg>
 <var>${user_data_dir}</var>
 <arg>'${use_headless}' == '${TRUE}'</arg>
 <arg>/tmp/chrome_profile_${timestamp}</arg>
 <arg>C:/temp/chrome_profile_${timestamp}</arg>
 <doc>Sets variable based on the given condition.</doc>
-<status status="PASS" start="2025-07-20T22:34:31.585873" elapsed="0.000195"/>
+<status status="PASS" start="2025-07-20T23:05:56.500938" elapsed="0.000175"/>
 </kw>
 <kw name="Set Variable If" owner="BuiltIn">
-<msg time="2025-07-20T22:34:31.586813" level="INFO">${headless_option} = </msg>
+<msg time="2025-07-20T23:05:56.501930" level="INFO">${headless_option} = </msg>
 <var>${headless_option}</var>
 <arg>'${use_headless}' == '${TRUE}'</arg>
 <arg>;add_argument("--headless")</arg>
 <arg>${EMPTY}</arg>
 <doc>Sets variable based on the given condition.</doc>
-<status status="PASS" start="2025-07-20T22:34:31.586485" elapsed="0.000349"/>
+<status status="PASS" start="2025-07-20T23:05:56.501589" elapsed="0.000364"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-07-20T22:34:31.587483" level="INFO">Opening browser 'chrome' to base url 'https://automationexercise.com'.</msg>
+<msg time="2025-07-20T23:05:56.502679" level="INFO">Opening browser 'chrome' to base url 'https://automationexercise.com'.</msg>
 <arg>${URL}</arg>
 <arg>chrome</arg>
 <arg>options=add_argument("--user-data-dir=${user_data_dir}");add_argument("--no-sandbox");add_argument("--disable-dev-shm-usage");add_argument("--disable-extensions");add_argument("--disable-gpu");add_argument("--remote-debugging-port=0")${headless_option}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-07-20T22:34:31.587307" elapsed="2.933612"/>
+<status status="PASS" start="2025-07-20T23:05:56.502469" elapsed="2.941305"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-07-20T22:34:34.521974" elapsed="0.027988"/>
+<status status="PASS" start="2025-07-20T23:05:59.445220" elapsed="0.017731"/>
 </kw>
 <arg>'${use_headless}' == '${FALSE}'</arg>
 <arg>Maximize Browser Window</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-07-20T22:34:34.521750" elapsed="0.028406"/>
+<status status="PASS" start="2025-07-20T23:05:59.444850" elapsed="0.018270"/>
 </kw>
-<status status="PASS" start="2025-07-20T22:34:31.581469" elapsed="2.968789"/>
+<status status="PASS" start="2025-07-20T23:05:56.496699" elapsed="2.966523"/>
 </kw>
 <kw name="Handle Cookie Consent" owner="ui_keywords">
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
@@ -79,82 +79,82 @@
 <arg>xpath=//*[contains(@class, "fc-button-label") and contains(text(), "Consent")]</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-07-20T22:34:34.550918" elapsed="0.014073"/>
+<status status="PASS" start="2025-07-20T23:05:59.464087" elapsed="0.015527"/>
 </kw>
-<msg time="2025-07-20T22:34:34.565187" level="INFO">${consent_present} = True</msg>
+<msg time="2025-07-20T23:05:59.479806" level="INFO">${consent_present} = True</msg>
 <var>${consent_present}</var>
 <arg>Wait Until Element Is Visible</arg>
 <arg>xpath=//*[contains(@class, "fc-button-label") and contains(text(), "Consent")]</arg>
 <arg>timeout=5s</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-07-20T22:34:34.550803" elapsed="0.014407"/>
+<status status="PASS" start="2025-07-20T23:05:59.463979" elapsed="0.015848"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-07-20T22:34:34.566162" level="INFO">Clicking element 'xpath=//*[contains(@class, "fc-button-label") and contains(text(), "Consent")]'.</msg>
+<msg time="2025-07-20T23:05:59.480853" level="INFO">Clicking element 'xpath=//*[contains(@class, "fc-button-label") and contains(text(), "Consent")]'.</msg>
 <arg>xpath=//*[contains(@class, "fc-button-label") and contains(text(), "Consent")]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-20T22:34:34.566042" elapsed="0.058121"/>
+<status status="PASS" start="2025-07-20T23:05:59.480694" elapsed="0.059677"/>
 </kw>
 <arg>${consent_present}</arg>
 <arg>Click Element</arg>
 <arg>xpath=//*[contains(@class, "fc-button-label") and contains(text(), "Consent")]</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-07-20T22:34:34.565873" elapsed="0.059010"/>
+<status status="PASS" start="2025-07-20T23:05:59.480512" elapsed="0.060576"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-07-20T22:34:34.625320" level="INFO">Cookie consent handled: True</msg>
+<msg time="2025-07-20T23:05:59.541418" level="INFO">Cookie consent handled: True</msg>
 <arg>Cookie consent handled: ${consent_present}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-07-20T22:34:34.625134" elapsed="0.000221"/>
+<status status="PASS" start="2025-07-20T23:05:59.541273" elapsed="0.000182"/>
 </kw>
-<status status="PASS" start="2025-07-20T22:34:34.550561" elapsed="0.075586"/>
+<status status="PASS" start="2025-07-20T23:05:59.463760" elapsed="0.078495"/>
 </kw>
 <kw name="Search For Product" owner="ui_keywords">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-07-20T22:34:34.626805" level="INFO">Clicking element 'xpath://a[@href="/products"]'.</msg>
+<msg time="2025-07-20T23:05:59.542903" level="INFO">Clicking element 'xpath://a[@href="/products"]'.</msg>
 <arg>xpath:${PRODUCT_LINK_PAGE}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-20T22:34:34.626668" elapsed="1.893398"/>
+<status status="PASS" start="2025-07-20T23:05:59.542749" elapsed="1.649068"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-07-20T22:34:36.521020" level="INFO">Typing text 'Tshirt' into text field 'xpath://*[@id='search_product']'.</msg>
+<msg time="2025-07-20T23:06:01.192853" level="INFO">Typing text 'Tshirt' into text field 'xpath://*[@id='search_product']'.</msg>
 <arg>xpath:${SEARCH_INPUT}</arg>
 <arg>${product}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-20T22:34:36.520806" elapsed="0.045376"/>
+<status status="PASS" start="2025-07-20T23:06:01.192618" elapsed="0.046447"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-07-20T22:34:36.567167" level="INFO">Clicking button 'xpath://*[@id='submit_search']'.</msg>
+<msg time="2025-07-20T23:06:01.240098" level="INFO">Clicking button 'xpath://*[@id='submit_search']'.</msg>
 <arg>xpath:${SEARCH_BUTTON}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-20T22:34:36.566964" elapsed="1.515834"/>
+<status status="PASS" start="2025-07-20T23:06:01.239883" elapsed="1.376846"/>
 </kw>
 <arg>Tshirt</arg>
-<status status="PASS" start="2025-07-20T22:34:34.626478" elapsed="3.457451"/>
+<status status="PASS" start="2025-07-20T23:05:59.542542" elapsed="3.074881"/>
 </kw>
 <kw name="Verify Product Results Visible" owner="ui_keywords">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>xpath:${RESULT_DIV}</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-07-20T22:34:38.084456" elapsed="0.008909"/>
+<status status="PASS" start="2025-07-20T23:06:02.617978" elapsed="0.009762"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-07-20T22:34:38.098987" level="INFO">Element 'xpath://div[@class='features_items']' is displayed.</msg>
+<msg time="2025-07-20T23:06:02.634152" level="INFO">Element 'xpath://div[@class='features_items']' is displayed.</msg>
 <arg>xpath:${RESULT_DIV}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-07-20T22:34:38.093575" elapsed="0.005460"/>
+<status status="PASS" start="2025-07-20T23:06:02.627979" elapsed="0.006243"/>
 </kw>
-<status status="PASS" start="2025-07-20T22:34:38.084259" elapsed="0.015424"/>
+<status status="PASS" start="2025-07-20T23:06:02.617726" elapsed="0.017264"/>
 </kw>
 <doc>This test verifies that users can search for products on the website</doc>
 <tag>search</tag>
 <tag>smoke</tag>
 <tag>ui</tag>
-<status status="PASS" start="2025-07-20T22:34:31.580806" elapsed="6.519133"/>
+<status status="PASS" start="2025-07-20T23:05:56.496030" elapsed="6.139192"/>
 </test>
-<status status="PASS" start="2025-07-20T22:34:31.400664" elapsed="6.700889"/>
+<status status="PASS" start="2025-07-20T23:05:56.351479" elapsed="6.285264"/>
 </suite>
 <statistics>
 <total>

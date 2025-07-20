@@ -1,4 +1,2 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","9112","Test Signup Flow","","Sun Jul 20 19:18:04 WEST 2025","passed","Sun Jul 20 19:18:13 WEST 2025","Test Signup","Ui","",""
-"","13576","Valid Login Test","","Sun Jul 20 19:17:38 WEST 2025","failed","Sun Jul 20 19:17:52 WEST 2025","Test Login","Ui","",""
-"","12046","Test Product Search","","Sun Jul 20 19:17:52 WEST 2025","passed","Sun Jul 20 19:18:04 WEST 2025","Test Search","Ui","",""
+"Verifies the /users endpoint returns a valid non-empty user list.","551","GET / users return user list","tests.api","Sun Jul 20 17:39:22 WEST 2025","passed","Sun Jul 20 17:39:23 WEST 2025","","test_users","",""

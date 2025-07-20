@@ -34,7 +34,7 @@ jobs:
 
       - name: Run Robot Framework Tests
         run: |
-          robot --variable HEADLESS:true --listener allure_robotframework -d results tests/ui
+          robot --variable HEADLESS:true --listener "allure_robotframework:./allure-results" -d results tests/ui
         env:
           CI: true
 
