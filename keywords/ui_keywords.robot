@@ -12,14 +12,8 @@ ${SIGNUP_BUTTON}    //*[@data-qa='signup-button']
 *** Keywords ***
 Open Website
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S_%f
-    ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
-    Call Method    ${chrome_options}    add_argument    --user-data-dir=C:\\temp\\chrome_profile_${timestamp}
-    Call Method    ${chrome_options}    add_argument    --no-sandbox
-    Call Method    ${chrome_options}    add_argument    --disable-dev-shm-usage
-    Call Method    ${chrome_options}    add_argument    --disable-extensions
-    Call Method    ${chrome_options}    add_argument    --disable-gpu
-    Call Method    ${chrome_options}    add_argument    --remote-debugging-port=0
-    Open Browser    ${URL}    chrome    options=${chrome_options}
+    ${user_data_dir}=    Set Variable    C:/temp/chrome_profile_${timestamp}
+    Open Browser    ${URL}    chrome    options=add_argument("--user-data-dir=${user_data_dir}");add_argument("--no-sandbox");add_argument("--disable-dev-shm-usage");add_argument("--disable-extensions");add_argument("--disable-gpu");add_argument("--remote-debugging-port=0")
     Maximize Browser Window
 
 Click Signup/Login
