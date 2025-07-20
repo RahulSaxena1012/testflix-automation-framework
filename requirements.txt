@@ -6,3 +6,4 @@ allure-pytest
 locust
 pytest-html
 robotframework-seleniumlibrary
+allure-robotframework

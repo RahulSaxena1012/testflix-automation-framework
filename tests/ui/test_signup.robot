@@ -8,9 +8,10 @@ ${URL}    https://automationexercise.com
 
 *** Test Cases ***
 Test Signup Flow
+    [Documentation]    This test verifies the user registration process with valid credentials
+    [Tags]    signup    regression    ui
     ${random}=    Generate Random String    5
     ${email}=     Set Variable    test_user_${random}@mail.com
-    [Tags]    signup
     Open Website
     Handle Cookie Consent
     Click Signup/Login

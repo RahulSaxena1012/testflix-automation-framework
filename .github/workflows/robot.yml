@@ -34,9 +34,32 @@ jobs:
 
       - name: Run Robot Framework Tests
         run: |
-          robot --variable HEADLESS:true -d results tests/ui
+          robot --variable HEADLESS:true --listener allure_robotframework -d results tests/ui
         env:
           CI: true
+
+      - name: Get Allure history
+        uses: actions/checkout@v4
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Generate Allure Report
+        uses: simple-elf/allure-report-action@master
+        if: always()
+        with:
+          allure_results: allure-results
+          allure_history: allure-history
+          keep_reports: 20
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: always()
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: allure-history
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
@@ -44,3 +67,10 @@ jobs:
         with:
           name: robot-results
           path: results/
+
+      - name: Upload Allure results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: allure-results
+          path: allure-results/
