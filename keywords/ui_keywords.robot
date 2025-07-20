@@ -53,5 +53,6 @@ Verify Product Results Visible
 
 *** Keywords ***
 Handle Cookie Consent
-    Wait Until Element Is Visible    xpath=//*[contains(@class, "fc-button-label") and contains(text(), "Consent")]    timeout=10s
-    Click Element                    xpath=//*[contains(@class, "fc-button-label") and contains(text(), "Consent")]
+    ${consent_present}=    Run Keyword And Return Status    Wait Until Element Is Visible    xpath=//*[contains(@class, "fc-button-label") and contains(text(), "Consent")]    timeout=5s
+    Run Keyword If    ${consent_present}    Click Element    xpath=//*[contains(@class, "fc-button-label") and contains(text(), "Consent")]
+    Log    Cookie consent handled: ${consent_present}
