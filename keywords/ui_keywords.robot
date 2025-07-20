@@ -14,10 +14,12 @@ ${SIGNUP_BUTTON}    //*[@data-qa='signup-button']
 Open Website
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S_%f
     ${is_ci}=    Get Environment Variable    CI    ${EMPTY}
-    ${user_data_dir}=    Set Variable If    '${is_ci}' != ''    /tmp/chrome_profile_${timestamp}    C:/temp/chrome_profile_${timestamp}
-    ${headless_option}=    Set Variable If    '${is_ci}' != ''    ;add_argument("--headless")    ${EMPTY}
+    ${headless_var}=    Get Variable Value    ${HEADLESS}    ${EMPTY}
+    ${use_headless}=    Set Variable If    '${is_ci}' != '' or '${headless_var}' == 'true'    ${TRUE}    ${FALSE}
+    ${user_data_dir}=    Set Variable If    '${use_headless}' == '${TRUE}'    /tmp/chrome_profile_${timestamp}    C:/temp/chrome_profile_${timestamp}
+    ${headless_option}=    Set Variable If    '${use_headless}' == '${TRUE}'    ;add_argument("--headless")    ${EMPTY}
     Open Browser    ${URL}    chrome    options=add_argument("--user-data-dir=${user_data_dir}");add_argument("--no-sandbox");add_argument("--disable-dev-shm-usage");add_argument("--disable-extensions");add_argument("--disable-gpu");add_argument("--remote-debugging-port=0")${headless_option}
-    Maximize Browser Window
+    Run Keyword If    '${use_headless}' == '${FALSE}'    Maximize Browser Window
 
 Click Signup/Login
     Click Element    xpath://a[contains(text(), ' Signup / Login')]
