@@ -5,3 +5,4 @@ requests
 allure-pytest
 locust
 pytest-html
+robotframework-seleniumlibrary
