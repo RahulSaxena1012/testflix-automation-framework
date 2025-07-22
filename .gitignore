@@ -3,6 +3,15 @@ results/
 allure-results/
 allure-report/
 allure-history/
+output/
+reports/
+
+# Generated test outputs
+log.html
+output.xml
+report.html
+selenium-screenshot-*.png
+interactive_console_output.xml
 
 # Python
 __pycache__/
@@ -25,6 +34,10 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+venv/
+env/
+.env
+.pytest_cache/
 
 # IDEs
 .vscode/
