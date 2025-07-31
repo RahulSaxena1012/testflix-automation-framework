@@ -11,15 +11,16 @@ ${SIGNUP_EMAIL}    //*[@data-qa='signup-email']
 ${SIGNUP_BUTTON}    //*[@data-qa='signup-button']
 
 *** Keywords ***
-Open Website
-    ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S_%f
-    ${is_ci}=    Get Environment Variable    CI    ${EMPTY}
-    ${headless_var}=    Get Variable Value    ${HEADLESS}    ${EMPTY}
-    ${use_headless}=    Set Variable If    '${is_ci}' != '' or '${headless_var}' == 'true'    ${TRUE}    ${FALSE}
-    ${user_data_dir}=    Set Variable If    '${use_headless}' == '${TRUE}'    /tmp/chrome_profile_${timestamp}    C:/temp/chrome_profile_${timestamp}
-    ${headless_option}=    Set Variable If    '${use_headless}' == '${TRUE}'    ;add_argument("--headless")    ${EMPTY}
-    Open Browser    ${URL}    chrome    options=add_argument("--user-data-dir=${user_data_dir}");add_argument("--no-sandbox");add_argument("--disable-dev-shm-usage");add_argument("--disable-extensions");add_argument("--disable-gpu");add_argument("--remote-debugging-port=0")${headless_option}
-    Run Keyword If    '${use_headless}' == '${FALSE}'    Maximize Browser Window
+Setup Chrome Options
+    ${random_dir}=    Generate Random String    8
+    ${user_data_dir}=    Set Variable    /tmp/chrome-user-data-${random_dir}
+    ${user_data_arg}=    Set Variable    --user-data-dir=${user_data_dir}
+    ${options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
+    Call Method    ${options}    add_argument    --headless
+    Call Method    ${options}    add_argument    --no-sandbox
+    Call Method    ${options}    add_argument    --disable-dev-shm-usage
+    Call Method    ${options}    add_argument    ${user_data_arg}
+    Create WebDriver    Chrome    options=${options}
 
 Click Signup/Login
     Click Element    xpath://a[contains(text(), ' Signup / Login')]

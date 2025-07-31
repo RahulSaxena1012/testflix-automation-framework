@@ -11,6 +11,7 @@ class WebPerformanceUser(HttpUser):
     """
     Simulates real user behavior on the website
     """
+    host = "https://automationexercise.com"
     wait_time = between(2, 5)  # Users typically take 2-5 seconds between actions
     
     def on_start(self):

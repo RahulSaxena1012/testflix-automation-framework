@@ -10,7 +10,8 @@ ${URL}    https://automationexercise.com
 Test Product Search
     [Documentation]    This test verifies that users can search for products on the website
     [Tags]    smoke    search    ui
-    Open Website
+    Setup Chrome Options
+    Go To    ${URL}
     Handle Cookie Consent
     Search For Product    Tshirt
     Verify Product Results Visible
